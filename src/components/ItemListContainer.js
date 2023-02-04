@@ -1,3 +1,5 @@
+import { collection, getDocs, query, where } from "firebase/firestore"
+import { db } from "../firebase"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemList from "./ItemList"
@@ -8,26 +10,27 @@ const ItemListContainer = () => {
     const [productos,setProductos] = useState([])
 
     const props = useParams();
-    let url= "https://fakestoreapi.com/products"
-    
+
     useEffect(() => {
+        var productosCollection=null
         if(props.categoria!==undefined){
-            url=url+"/category/"+props.categoria   
+            productosCollection = query(collection(db,"Productos"),where("category","==",props.categoria))
+        }else{
+            productosCollection = collection(db,"Productos")
         }
+        const pedidoFirestore = getDocs(productosCollection)
+        const productosfire=[]
 
-        const pedido = fetch(url)
-
-        pedido
-            .then((respuesta) => {
-                const productos = respuesta.json()
-                return productos
-
-            })
-            .then((productos) => {
-                setProductos(productos)
+        pedidoFirestore
+            .then((respuesta)=>{
+                respuesta.docs.forEach(doc=>{
+                    const prod ={id: doc.id , ...doc.data()}
+                    productosfire.push(prod)                  
+                })
+                setProductos(productosfire)
                 setLoad(true)
             })
-            .catch((error) => {
+            .catch((error)=>{
                 console.log(error)
             })
     }, [props.categoria])

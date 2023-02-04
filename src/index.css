@@ -77,6 +77,7 @@
 
 html, body, #root {
     height: 100%;
+    width: 100%;
     background-color: #F0EBE3;
 }
 
@@ -97,13 +98,12 @@ footer {
     width: 100%;
 }
 
-
 main {
     color: black;
     padding: 1rem 0.5rem;
     font-size: 0.75rem;
     height: 20%;
-    width: 80%;
+    width: 100%;
     display: flex;  
     margin-left: auto;
     margin-right: auto;
@@ -129,17 +129,21 @@ main {
     height:100%;
     margin-left: auto;
     margin-right: auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
 }
 
 .card-text{
     grid-area: text;
     background: #7D9D9C;
     color: black;
-    font-size: smaller;
+    font-size: 12px;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    position:relative; top: 25%; left:0px; width:100%;
+    position:relative; top: 5%; left:0px; width:100%;
 }
 
 
@@ -159,13 +163,6 @@ main {
     font-size: small;
 }
 
-.card-image {
-    grid-area: image;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    background-size: cover;
-}
-
 .item-container{
     display: flex;
     flex-wrap: wrap;
@@ -173,6 +170,7 @@ main {
     justify-content: center;
     margin-bottom: 100px;
 }
+
 .main{
     justify-items: auto;
     align-items: baseline;
@@ -201,14 +199,168 @@ main {
 
 .title {
     font-size: 28px;
+    margin-bottom: 10px;
   }
   
 .description {
     text-align: justify;
     font-size: 16px;
+    margin-bottom: 10px;
 }
 
 .price{
     font-size: 16px;
-    font-weight: bold;   
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contador{
+    display: flex;
+    display: inline-block;
+    align-items: center;
+}
+
+.containercarrito {
+    padding: 1rem 0.5rem;
+    width: 95%;
+}
+
+.cardcarrito {
+    display:grid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    grid-template-columns: 20% 50% 30%;
+    grid-template-rows: 200px;
+    grid-gap: 0px;
+    height: 200px;
+    width: 100%;
+    grid-template-areas: "img txt info";
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    align-items:center;
+    justify-content:center;
+}
+.imgcontcarrito{
+    grid-area: img;
+    width: 160px;
+    height: 160px;
+    padding-right: 10px;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardcarrito-image {
+    grid-area: img;
+    display: flex;
+    object-fit: scale-down;
+    width: 100%;
+    height: 200px;
+    background: white;
+}
+
+.cardcarrito-text{
+    grid-area: txt;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    background: #7D9D9C;
+    color: black;
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+}
+.statscontcarrito{
+    display:grid;
+    grid-area: info;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    grid-gap: 10px;
+    height: 100%;
+    width: 100%;
+    grid-template-areas: "txtstats" "btnstats";
+    background: #251749;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+}
+
+.cardcarrito-stats {
+    grid-area: txtstats;   
+    display: flex;
+    background: #251749;
+    width: 100%;
+    height: 100%;
+    color: white;
+    align-items: center;
+    justify-content:center;
+    font-size: 16px;
+    text-align: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.btncarrito{
+    grid-area:btnstats;
+    display: flex;
+    margin-right: 50px;
+    margin-left: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardtotal {
+    display:flex;
+    height: 50px;
+    width: 33%;
+    background: #251749;
+    color:white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    align-items:center;
+    justify-content:left;
+    padding-left: 20px;
+    padding-top: 15px;
+    float: right;
+    margin-bottom: 100px;
+}
+
+.btntotal{
+    display: flex;
+    position: absolute;
+    right: 60px;
+    margin-bottom: 15px;
+}
+
+.small-component {
+    width: 100%;
+    align-items:safe;
+    overflow:hidden;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.inputform{
+    margin-bottom: 10px;
+}
+
+.btnform{
+    margin-top: 10px;
+    float:right;
 }
