@@ -1,14 +1,14 @@
-import { NavLink } from "react-router-dom"
-import NavBar from "./NavBar"
+import { Link } from 'react-router-dom';
+import NavBar from './NavBar';
 
 const Header = () => {
-    const isHeader = true
+    const isHeader = true;
 
     return (
-        <header className="header">
-            <NavLink to="/">
-                <h1 className="header__title" align="left">Store</h1> 
-            </NavLink>
+        <header className='header'>
+            <Link to='/'>
+                <h1 className='header__title' align='left'>Store</h1> 
+            </Link>
             <NavBar isHeader={isHeader}/>
         </header>
     )

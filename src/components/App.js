@@ -1,10 +1,10 @@
-import { BrowserRouter } from "react-router-dom"
-import CustomProvider from "./CustomProvider"
-import Main from "./Main"
-import Header from "./Header"
-import Footer from "./Footer"
-import { ToastContainer, toast } from 'react-toastify';
+import { BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CustomProvider from './CustomProvider';
+import Header from './Header';
+import Footer from './Footer';
+import Main from './Main';
 
 const App = () => {
     return (
@@ -14,8 +14,8 @@ const App = () => {
                 <Main />
                 <Footer/>
             </BrowserRouter>
-            <ToastContainer position="bottom-right" autoClose={3000} hideProgressBar={true} 
-                            closeOnClick rtl={false} draggable pauseOnHover theme="colored"/>
+            <ToastContainer position='bottom-right' autoClose={1000} hideProgressBar={true} 
+                            closeOnClick rtl={false} draggable pauseOnHover theme='colored'/>
         </CustomProvider>
     )
 }

@@ -1,13 +1,13 @@
-import { NavLink } from "react-router-dom"
-import {useCart} from './CustomProvider'
+import { useCart } from './CustomProvider';
+import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
-    const {totalProductos} = useCart()
+    const {totalProductos} = useCart();
     return (
-        <NavLink to="/carrito">
-            <span className="material-icons">shopping_cart</span>
-            <span className="notifi">{totalProductos}</span> 
-        </NavLink>
+        <Link to='/carrito'>
+            <span className='material-icons'>shopping_cart</span>
+            <span className='notifi'>{totalProductos}</span> 
+        </Link>
     )
 }
 

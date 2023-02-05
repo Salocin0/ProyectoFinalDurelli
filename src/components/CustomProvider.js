@@ -1,16 +1,17 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState } from 'react';
+import { toast } from 'react-toastify';
 
-const contexto = createContext()
-const Provider = contexto.Provider
+const contexto = createContext();
+const Provider = contexto.Provider;
 
 export const useCart = () => {
-    return useContext(contexto)
+    return useContext(contexto);
 }
 
 const CustomProvider = ({ children }) => {
 
-    const [carrito, setCarrito] = useState([])
-    const [totalProductos, setTotalProductos] = useState(0)
+    const [carrito, setCarrito] = useState([]);
+    const [totalProductos, setTotalProductos] = useState(0);
 
     const agregarProducto = (producto, cantidad) => {
         if (estaEnCarrito(producto.id)) {
@@ -21,38 +22,38 @@ const CustomProvider = ({ children }) => {
             setCarrito(copia);
         }else{
             const copia = [...carrito];
-            copia.push(producto)
+            copia.push(producto);
             const index = copia.findIndex(p => p.id === producto.id);
             setTotalProductos(totalProductos+cantidad);
             copia[index].cantidad = cantidad;
             setCarrito(copia);
         }
+        toast.success('Se agrego '+cantidad+' X '+producto.title);
     }
 
     const eliminarProducto = (id) => {
         if(estaEnCarrito(id)){
             const copia = [...carrito];
-            setTotalProductos(Number(totalProductos)-Number(copia.filter(p=>p.id===id)[0].cantidad))
+            setTotalProductos(Number(totalProductos)-Number(copia.filter(p=>p.id===id)[0].cantidad));
             setCarrito(copia.filter(p => p.id !== id));
         }
-     }
+    }
 
     const modificarCantidad = (id, cantidad) => {
         const copia= [...carrito];
         const index = copia.findIndex(p => p.id === id);
         if(0<cantidad && cantidad<=copia[index].stock){
             if(estaEnCarrito(id)){
-                setTotalProductos(totalProductos + cantidad-copia[index].cantidad)
+                setTotalProductos(totalProductos + cantidad-copia[index].cantidad);
                 copia[index].cantidad = cantidad;
                 setCarrito(copia);
             }
         }
-        
     }
 
     const vaciarCarrito = () => {
-        setCarrito([])
-        setTotalProductos(0)
+        setCarrito([]);
+        setTotalProductos(0);
     }
 
     const estaEnCarrito = (id) => {
@@ -65,22 +66,22 @@ const CustomProvider = ({ children }) => {
         const copia= [...carrito];
         var total=0;
         for (let i = 0; i < copia.length; i++) {
-            total = total+copia[i].price*copia[i].cantidad
+            total = total+copia[i].price*copia[i].cantidad;
         }
-        return total;
+        return total.toFixed(2);
     }
 
     const valorDelContexto = {
         carrito: carrito,
         totalProductos: totalProductos,
-        setCarrito : setCarrito , 
+        setCarrito : setCarrito, 
         setTotalProductos : setTotalProductos,
         agregarProducto: agregarProducto,
-        vaciasCarrito: vaciarCarrito,
+        vaciarCarrito: vaciarCarrito,
         eliminarProducto:eliminarProducto,
         modificarCantidad:modificarCantidad,
         totalCarrito:totalCarrito
-    }
+    };
 
     return (
         <Provider value={valorDelContexto}>

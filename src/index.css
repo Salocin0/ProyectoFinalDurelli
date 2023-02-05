@@ -17,14 +17,14 @@
 }
 
 .header__link {
-  background-color: #251749;
-  color: #FFFBEB;
-  padding: 1rem 0.5rem;
-  text-decoration: none;
-  color: #FFFBEB;
-  margin-left: 1rem;
-  align-items: center;
-  justify-content: space-between;
+    background-color: #251749;
+    color: #FFFBEB;
+    padding: 1rem 0.5rem;
+    text-decoration: none;
+    color: #FFFBEB;
+    margin-left: 1rem;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .material-icons{
@@ -85,6 +85,7 @@ html, body, #root {
     display: flex;
     flex-direction: column;
 }
+
 footer {
     background-color: #251749;
     color: #FFFBEB;
@@ -115,7 +116,7 @@ main {
 .card {
     display: grid;
     grid-template-columns: 200px;
-    grid-template-rows: 215px 85px 60px;
+    grid-template-rows: 215px 85px 37px;
     grid-template-areas: "image" "text" "stats";
     border-radius: 18px;
     background: white;
@@ -180,7 +181,7 @@ main {
 .container {
     display: flex;
     margin-bottom: 100px;
-  }
+}
   
 .image-column {
     width: 70%;
@@ -201,7 +202,7 @@ main {
 .title {
     font-size: 28px;
     margin-bottom: 10px;
-  }
+}
   
 .description {
     text-align: justify;
@@ -245,6 +246,7 @@ main {
     align-items:center;
     justify-content:center;
 }
+
 .imgcontcarrito{
     grid-area: img;
     width: 160px;
@@ -349,6 +351,13 @@ main {
     margin-bottom: 15px;
 }
 
+.cartentymsg {
+    text-align: center;
+    margin: 2%;
+    color: gray;
+    margin-bottom: 40px;
+}
+
 .small-component {
     width: 100%;
     align-items:safe;
@@ -364,4 +373,26 @@ main {
 .btnform{
     margin-top: 10px;
     float:right;
+}
+
+.divventa{
+    background-color: #7D9D9C;
+    width: 80%;
+    height: 50%;
+    border-radius: 15px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenventa {
+    text-align: center;
+    margin: 2%;
 }

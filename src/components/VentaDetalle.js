@@ -1,37 +1,36 @@
-import { useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
-import { collection , getDocs, query, where } from "firebase/firestore"
-import { db } from "../firebase"
-import { ToastContainer, toast } from 'react-toastify';
+import { collection , getDocs, query, where } from 'firebase/firestore';
+import { useParams, Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Button } from 'react-bootstrap';
+import { toast } from 'react-toastify';
+import { db } from '../firebase';
 
 const Carrito = () => {
-    const [venta,setVenta] = useState([])
+    const [venta,setVenta] = useState([]);
 
     const props = useParams();
 
     useEffect(() => {
-        const queryIdVenta = query(collection(db, "Ventas"),where("__name__","==",props.id))
-        const pedidoFirestore = getDocs(queryIdVenta)
-
-        toast.promise(pedidoFirestore, { 
-            pending: "Cargando Venta", 
-            success: "Venta cargada", 
-            error: "Error al cargar la venta"
-        })
+        const queryIdVenta = query(collection(db, 'Ventas'),where('__name__','==',props.id));
+        const pedidoFirestore = getDocs(queryIdVenta);
 
         pedidoFirestore
             .then((respuesta)=>{
-                const vent = {id: props.id , ...respuesta.docs[0].data()}
-                setVenta(vent)
+                const vent = {id: props.id , ...respuesta.docs[0].data()};
+                setVenta(vent);
             })
             .catch((error)=>{
-                console.log(error)
-            })
+                toast.error('error al ver la venta:' + error.mensaje);
+            });
     }, [props.id])
 
     return (
-        <div className="containercarrito">
-            <p>{venta.id}</p>
+        <div className='divventa'>
+            <h2 className='contenventa'>Gracias por su compra!</h2>
+            <h3 className='contenventa'>Su codigo de compra es: {venta.id} </h3>
+            <Link to='/'>
+                <Button className='contenventa'>Volver al inicio</Button>
+            </Link>
         </div>
     )
 }

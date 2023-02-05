@@ -1,10 +1,9 @@
-import CarritoForm from "./CarritoForm"
-import CarritoItemContainer from "./CarritoItemConteiner"
-import CarritoTotal from "./CarritoTotal"
+import CarritoItemContainer from './CarritoItemConteiner';
+import CarritoTotal from './CarritoTotal';
 
 const Carrito = () => {
     return (
-        <div className="containercarrito">
+        <div className='containercarrito'>
             <CarritoItemContainer/>
             <CarritoTotal/>
         </div>

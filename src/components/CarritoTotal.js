@@ -1,14 +1,16 @@
+import { useCart } from './CustomProvider';
 import { Button } from 'react-bootstrap';
-import {useCart} from './CustomProvider'
-import { NavLink } from "react-router-dom"
+import { Link } from 'react-router-dom';
 
 const CarritoTotal = () => {
-    const {totalCarrito} = useCart()
+    const {totalCarrito} = useCart();
 
     return (
-        <div className="cardtotal">
-            <p>TOTAL: {totalCarrito()} $</p>
-            <Button size="sm" className='btntotal' variant="light"><NavLink to="/Compra">Continuar compra</NavLink></Button>
+        <div className='cardtotal'>
+            <p>Total: {totalCarrito()} $</p>
+            <Link to='/Compra'>
+                <Button size='sm' className='btntotal' variant='light'>Continuar compra</Button>
+            </Link>
         </div>
     )
 }
