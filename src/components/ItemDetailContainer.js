@@ -28,7 +28,7 @@ const ItemDetailContainer = () => {
                 setProducto(prod);
             })
             .catch((error)=>{
-                toast.error('error al cargar los productos:' + error.mensaje);
+                toast.error('Error al cargar el producto:' + error.mensaje);
             })
     }, [props.id])
 

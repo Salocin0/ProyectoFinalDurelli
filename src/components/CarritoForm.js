@@ -130,10 +130,10 @@ const CarritoForm = () => {
                             <Form.Control aria-label='Apellido' type='text' onChange={handleChangeApellido} aria-describedby='inputGroup-sizing-sm' placeholder='Apellido'/>
                         </InputGroup>
                         <InputGroup className='inputform'>
-                            <Form.Control aria-label='Nombre' type='number' onChange={handleChangeTelefono} aria-describedby='inputGroup-sizing-sm' placeholder='1234-123456'/>
+                            <Form.Control aria-label='Telefono' type='number' onChange={handleChangeTelefono} aria-describedby='inputGroup-sizing-sm' placeholder='1234-123456'/>
                         </InputGroup>
                         <InputGroup className='inputform'>
-                            <Form.Control aria-label='Apellido' type='text' onChange={handleChangeEmail} aria-describedby='inputGroup-sizing-sm' placeholder='Email'/>
+                            <Form.Control aria-label='Email' type='text' onChange={handleChangeEmail} aria-describedby='inputGroup-sizing-sm' placeholder='Email'/>
                         </InputGroup>
                     </InputGroup>
                 </Col>

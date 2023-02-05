@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# DOCUMENTACIÓN    
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* Descripción de la aplicación
+    -
 
-## Available Scripts
+        Esta aplicación es un e-commerce desarrollado en React que ofrece una búsqueda general de productos en Firebase, la posibilidad de buscar por catálogos definidos, ver los detalles de cada producto (incluyendo foto, título, descripción y precio) y seleccionar la cantidad deseada para agregar al carrito (sin exceder el stock disponible). Al ver el carrito, se pueden ver todos los productos agregados con su foto, título, precio por unidad, cantidad seleccionada y subtotal. Al final del carrito, se muestra el total y un botón para continuar con el pago. Al seleccionar este botón, se redirige a otra ventana donde se encuentra una lista de los productos con el total y un formulario para completar con los datos del comprador. Una vez que se confirma la compra, se guarda en el sistema y se proporciona un código de compra, permitiendo regresar al inicio.
 
-In the project directory, you can run:
+* Uso e Instalacion
+    -
+    Para instalar la aplicación, siga los siguientes pasos en su terminal
 
-### `npm start`
+        ```
+        > git clone https://github.com/Salocin0/ProyectoFinalDurelli.git
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+        > npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+        > npm start
+        ```
 
-### `npm test`
+* Tecnologias usadas
+    -
+    
+    * Fortawesome: se utiliza fortawesome para las los logos de la aplicacion, como los logos de + y - en el detalle de cada item
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+    * React: es una herramienta que nos permite mantener un control sobre el estado y los efectos de la aplicación.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    * Bootstrap y React-bootstrap: Bootstrap es un framework de diseño web que proporciona componentes predefinidos y estilos para facilitar la creación de aplicaciones web modernas y responsivas. React Bootstrap es una versión de Bootstrap diseñada para ser utilizada con React. en esta aplicacion todos los botones, inputs, y otros componentes basicos son sacados de React-bootstrap
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    * Firebase: Firebase es una plataforma que ofrece una serie de herramientas y servicios, en este caso se uso su base de datos, la dependencia de Firebase en este proyecto se uso para conectarse a dicha base de datos.
+    
+    * React-dom: es una biblioteca que se usa para permitir la representación de componentes de React en el DOM. renderiza los componentes de React en el navegador.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    * React-router-dom: es una dependencia que permite implementar el enrutamiento en aplicaciones web construidas con React. Se utilizaron componentes como Route, Link, y BrowserRouter que se utilizan para definir las rutas de la aplicación y controlar la visualización de diferentes componentes en función de la URL actual.
 
-### `npm run eject`
+    * React-scripts: Provee un conjunto de scripts y configuraciones preestablecidas. Incluye tareas como la compilación, pruebas unitarias, optimización de recursos, y despliegue en producción
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    * React-toastify: se usa para mostrar todas notificaciones de la aplicación. permite mostrar mensajes de todo tipo (exito, error, informativo, etc).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    * Web-vitals: es un conjunto de métricas que miden la experiencia del usuario en la web.
+* Deploy
+    -
+    [La aplicacion esta desplegada aqui](URL)

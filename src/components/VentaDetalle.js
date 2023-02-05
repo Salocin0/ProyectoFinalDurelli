@@ -20,7 +20,7 @@ const Carrito = () => {
                 setVenta(vent);
             })
             .catch((error)=>{
-                toast.error('error al ver la venta:' + error.mensaje);
+                toast.error('Error al ver la venta:' + error.mensaje);
             });
     }, [props.id])
 

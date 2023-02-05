@@ -36,7 +36,7 @@ const ItemListContainer = () => {
                 setProductos(productosfire);
             })
             .catch((error)=>{
-                toast.error('error al cargar los productos:' + error.mensaje);
+                toast.error('Error al cargar los productos:' + error.mensaje);
             })
     }, [props.categoria])
 
