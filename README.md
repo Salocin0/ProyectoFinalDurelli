@@ -40,4 +40,4 @@
     * Web-vitals: es un conjunto de métricas que miden la experiencia del usuario en la web.
 * Deploy
     -
-    [La aplicacion esta desplegada aqui](URL)
+    [La aplicacion esta desplegada aqui](https://proyectofinaldurelli-ia9rat73a-salocin0.vercel.app/)
