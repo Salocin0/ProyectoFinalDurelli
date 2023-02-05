@@ -7,7 +7,7 @@ const CarritoTotal = () => {
 
     return (
         <div className='cardtotal'>
-            <p>Total: {totalCarrito()} $</p>
+            <p className='txttotal'>Total: {totalCarrito()} $</p>
             <Link to='/Compra'>
                 <Button size='sm' className='btntotal' variant='light'>Continuar compra</Button>
             </Link>

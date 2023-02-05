@@ -14,7 +14,7 @@ const App = () => {
                 <Main />
                 <Footer/>
             </BrowserRouter>
-            <ToastContainer position='bottom-right' autoClose={1000} hideProgressBar={true} 
+            <ToastContainer position='bottom-right' autoClose={2000} hideProgressBar={true} 
                             closeOnClick rtl={false} draggable pauseOnHover theme='colored'/>
         </CustomProvider>
     )

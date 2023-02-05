@@ -337,18 +337,18 @@ main {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     align-items:center;
-    justify-content:left;
-    padding-left: 20px;
-    padding-top: 15px;
     float: right;
-    margin-bottom: 100px;
+    justify-content: space-between;
+    
 }
 
 .btntotal{
-    display: flex;
-    position: absolute;
-    right: 60px;
-    margin-bottom: 15px;
+    margin-right: 12px;
+}
+
+.txttotal{
+    margin-left: 12px;
+    margin-top: 15px;
 }
 
 .cartentymsg {
