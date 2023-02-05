@@ -2,8 +2,7 @@
 
 * Descripción de la aplicación
     -
-
-        Esta aplicación es un e-commerce desarrollado en React que ofrece una búsqueda general de productos en Firebase, la posibilidad de buscar por catálogos definidos, ver los detalles de cada producto (incluyendo foto, título, descripción y precio) y seleccionar la cantidad deseada para agregar al carrito (sin exceder el stock disponible). Al ver el carrito, se pueden ver todos los productos agregados con su foto, título, precio por unidad, cantidad seleccionada y subtotal. Al final del carrito, se muestra el total y un botón para continuar con el pago. Al seleccionar este botón, se redirige a otra ventana donde se encuentra una lista de los productos con el total y un formulario para completar con los datos del comprador. Una vez que se confirma la compra, se guarda en el sistema y se proporciona un código de compra, permitiendo regresar al inicio.
+    Esta aplicación es un e-commerce desarrollado en React que ofrece una búsqueda general de productos en Firebase, la posibilidad de buscar por catálogos definidos, ver los detalles de cada producto (incluyendo foto, título, descripción y precio) y seleccionar la cantidad deseada para agregar al carrito (sin exceder el stock disponible). Al ver el carrito, se pueden ver todos los productos agregados con su foto, título, precio por unidad, cantidad seleccionada y subtotal. Al final del carrito, se muestra el total y un botón para continuar con el pago. Al seleccionar este botón, se redirige a otra ventana donde se encuentra una lista de los productos con el total y un formulario para completar con los datos del comprador. Una vez que se confirma la compra, se guarda en el sistema y se proporciona un código de compra, permitiendo regresar al inicio.
 
 * Uso e Instalacion
     -
