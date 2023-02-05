@@ -95,6 +95,7 @@ footer {
     justify-content: center;
     position: fixed;
     bottom: 0;
+    height: 30px;
     width: 100%;
 }
 
@@ -168,7 +169,7 @@ main {
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .main{

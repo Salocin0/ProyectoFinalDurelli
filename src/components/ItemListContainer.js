@@ -3,6 +3,7 @@ import { db } from "../firebase"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemList from "./ItemList"
+import { ToastContainer, toast } from 'react-toastify';
 
 const ItemListContainer = () => {
 
@@ -20,6 +21,12 @@ const ItemListContainer = () => {
         }
         const pedidoFirestore = getDocs(productosCollection)
         const productosfire=[]
+        
+        toast.promise(pedidoFirestore, {
+            pending: "Cargando productos",
+            success: "Productos cargados",
+            error: "Error al cargar los productos",
+        });
 
         pedidoFirestore
             .then((respuesta)=>{
@@ -31,13 +38,12 @@ const ItemListContainer = () => {
                 setLoad(true)
             })
             .catch((error)=>{
-                console.log(error)
+                toast.error("error al cargar los productos:" + error.mensaje);
             })
     }, [props.categoria])
 
     return (
         <div >
-            {load ? "" : 'Cargando...'}
             <ItemList productos={productos}/>
         </div>
     )

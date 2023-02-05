@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom"
 import ItemDetailContainer from "./ItemDetailContainer"
 import Carrito from './Carrito'
 import CarritoForm from './CarritoForm'
+import VentaDetalle from './VentaDetalle'
 
 const Main = () => {
     return (
@@ -13,6 +14,7 @@ const Main = () => {
                 <Route path="/item/:id" element={<ItemDetailContainer/>}/>
                 <Route path="/carrito" element={<Carrito/>}/>
                 <Route path="/compra" element={<CarritoForm/>}/>
+                <Route path="/ventas/:id" element={<VentaDetalle/>}/>
             </Routes>
         </main>
     )

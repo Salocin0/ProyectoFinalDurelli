@@ -1,8 +1,9 @@
 import { useState } from "react"
+import { useEffect } from "react"
 import CarritoDetalle from "./CarritoDetalle"
 import {useCart} from './CustomProvider'
 import { db } from "../firebase"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
@@ -11,9 +12,12 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { ListGroup } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
 
 const CarritoForm = () => {
-    
+    const navigate = useNavigate();
+
+    const [idVenta, setIdVenta] = useState("");
     const [nombre,setNombre] = useState("")
     const [apellido,setApellido] = useState("")
     const [telefono,setTelefono] = useState("")
@@ -38,18 +42,28 @@ const CarritoForm = () => {
             productos: productosa
         }
 
-        const docRef = addDoc(collection(db, 'Compras'), nuevacompra);
+        const docRef = addDoc(collection(db, 'Ventas'), nuevacompra);
         
         docRef.then((respuesta)=>{
-            console.log(respuesta.id)
+            setIdVenta(respuesta.id)
         }).catch((error)=>{
             console.log(error)
         })
 
-        vaciasCarrito()
-        //sacar cartel de compra exitosa/error
-        //emitir codigo de compra
+        toast.promise(docRef, { 
+            pending: "Registrando Compra", 
+            success: "Compra Exitosa", 
+            error: "Error al registra la compra"
+        })
+        
     }
+
+    useEffect(() => {
+        if(idVenta!==""){
+            vaciasCarrito()
+            navigate('/ventas/'+idVenta);
+        }  
+    }, [idVenta]);
     
     const handleChangeName = (e) => {
         setNombre(e.target.value)
@@ -95,9 +109,7 @@ const CarritoForm = () => {
             </Row>
             <Row>
                 <Col xs={12}>
-                    <Link to={"/"}>
-                        <Button className="btnform" onClick={handleClick}>Finalizar compra</Button>
-                    </Link>
+                    <Button className="btnform" onClick={handleClick}>Finalizar compra</Button>
                 </Col>
             </Row>
         </Container>

@@ -3,13 +3,8 @@ const Footer = () => {
 
     return (
         <footer>
-            <a href="/">Copyright &copy; 2022</a>
-            <NavBar
-                //{
-                textLinkFooter="Home" //,
-                hrefLinkFooter="http://localhost:3000/"
-                //}
-            />
+            <a>Copyright &copy; 2022</a>
+            <NavBar/>
         </footer>
     )
 }
